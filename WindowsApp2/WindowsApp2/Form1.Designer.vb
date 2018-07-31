@@ -161,7 +161,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnLotSetUp)
         Me.Name = "Form1"
-        Me.Text = "DB-AS-00"
+        Me.Text = "FL-AXI-11"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

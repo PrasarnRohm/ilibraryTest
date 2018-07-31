@@ -148,7 +148,7 @@ Public Class Form1
             c_ApcsProiLibrary.Update_MachineState(c_CellConLotdata.MachineInfo.Id, MachineState.LotSetUp, c_CellConLotdata.UserInfo_SetUp.Id, c_logger)
             If c_CellConLotdata.LotUpdateInfoLotSetUp.IsOk Then
                 lbMessage.Text += "LotSetup :  True " & vbCrLf
-                c_CellConLotdata.RecipeMDM = c_CellConLotdata.LotUpdateInfoLotSetUp.Recipe.Name
+                'c_CellConLotdata.RecipeMDM = c_CellConLotdata.LotUpdateInfoLotSetUp.Recipe.Name
             Else
                 lbMessage.Text += "LotSetup :  False " & vbCrLf
                 MsgBox(c_CellConLotdata.LotUpdateInfoLotSetUp.ErrorMessage)

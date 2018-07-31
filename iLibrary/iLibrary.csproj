@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7BBC40C0-A499-41DF-B4AC-02C85E6EA40D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iLibrary</RootNamespace>
+    <AssemblyName>iLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApcsProServiceKyoto.cs" />
+    <Compile Include="ApcsProServiceRist.cs" />
+    <Compile Include="APCS\APCSMaterialInfo.cs" />
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="AppSettingHelper.cs" />
+    <Compile Include="DB_GetConverter.cs" />
+    <Compile Include="FunctionStepNameProvider.cs" />
+    <Compile Include="IApcsProService.cs" />
+    <Compile Include="iModel\DatabaseAccess.cs" />
+    <Compile Include="iModel\DatabaseAccessObject.cs" />
+    <Compile Include="iObject\AlarmInfoObject.cs" />
+    <Compile Include="iObject\CheckResultObject.cs" />
+    <Compile Include="iObject\DateTimeInfo.cs" />
+    <Compile Include="ErrorMessageProvider.cs" />
+    <Compile Include="iObject\EQPInfoObject.cs" />
+    <Compile Include="iObject\ErrorObject.cs" />
+    <Compile Include="iObject\InfoObject.cs" />
+    <Compile Include="iObject\JigInfoObject.cs" />
+    <Compile Include="iObject\LotInfoObject.cs" />
+    <Compile Include="iObject\MachineInfoObject.cs" />
+    <Compile Include="iObject\MaterialInfoObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\APCS\DB_APCSMaterialControl\DB_APCSMaterialControl.vbproj">
+      <Project>{374ee42a-5ac2-4454-ba0f-266d51bbfd5a}</Project>
+      <Name>DB_APCSMaterialControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APCS\MP_APCSMaterialControl\MP_APCSMaterialControl.vbproj">
+      <Project>{7cca8b97-0d08-4a0f-a72d-40ace497a9f7}</Project>
+      <Name>MP_APCSMaterialControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APCS\TC_APCSMaterialControl\TC_APCSMaterialControl.vbproj">
+      <Project>{f79af608-6e91-4e18-97ae-ab8b21bfd99c}</Project>
+      <Name>TC_APCSMaterialControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APCS\WB_APCSMaterialControl\WB_APCSMaterialControl.vbproj">
+      <Project>{73190603-a1b9-48f6-a64c-2c6f768c1ae4}</Project>
+      <Name>WB_APCSMaterialControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rohm.Common.Logging\Rohm.Common.Logging.csproj">
+      <Project>{FB2757D0-C92B-42BF-8B3B-614EA0151578}</Project>
+      <Name>Rohm.Common.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL\ApcsProService\CHECK\MACHINE\CheckMachineCondition\CheckMachineConditionFunction.v.1.sql" />
+    <Content Include="SQL\ApcsProService\CHECK\MAN\CheckUserPermission\CheckUserPermissionFunction.v.1.sql" />
+    <Content Include="SQL\ApcsProService\CHECK\MAN\CheckUserPermission\CheckUserPermissionFunction.v.2.sql" />
+    <Content Include="SQL\ApcsProService\CHECK\MAN\CheckUserPermission\CheckUserPermissionFunction.v.3.sql" />
+    <Content Include="SQL\ApcsProService\CHECK\UNKNOWN\CheckLotCondition\CheckLotConditionFunction.v.1.sql" />
+    <Content Include="SQL\ApcsProService\GET\MACHINE\GetMachineInfoArrayByCellConIp\GetMachineInfoArrayByCellConIpFunction.v.1.sql" />
+    <Content Include="SQL\ApcsProService\GET\MACHINE\GetMachineInfo\GetMachineInfoFunction.v.1.sql" />
+    <Content Include="SQL\ApcsProService\GET\MAN\GetUserInfoWithPassword\GetUserInfoWithPasswordFunction.v.1.sql" />
+    <Content Include="SQL\ApcsProService\GET\MAN\GetUserInfo\GetUserInfoFunction.v.1.sql" />
+    <Content Include="SQL\ApcsProService\GET\UNKNOWN\GetLotInfo\GetLotInfoFunction.v.1.sql" />
+    <Content Include="SQL\ApcsProService\OTHER\ErrorMessageProvider\ErrorMessageProviderInitial.v.1.sql" />
+    <Content Include="SQL\ApcsProService\OTHER\FunctionStepNameProvider\FunctionStepNameProviderInitial.v.1.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

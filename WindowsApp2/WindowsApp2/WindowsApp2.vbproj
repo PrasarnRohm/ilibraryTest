@@ -49,7 +49,7 @@
   <ItemGroup>
     <Reference Include="iLibrary, Version=1.0.0.11, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\iLibrary\bin\Debug\iLibrary.dll</HintPath>
+      <HintPath>Dll\iLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Rohm.Common.Logging">
       <HintPath>Dll\Rohm.Common.Logging.dll</HintPath>
